@@ -7,7 +7,8 @@ namespace FizzbuzzTest
     public class FizzbuzzTDD
     {
         private Fizzbuzz fizzbuzz;
-        public FizzbuzzTDD(){
+        public FizzbuzzTDD()
+        {
             this.fizzbuzz = new Fizzbuzz();
         }
 
@@ -17,17 +18,22 @@ namespace FizzbuzzTest
         [InlineData(4, "4")]
         [InlineData(7, "7")]
         [InlineData(8, "8")]
+        [InlineData(11, "11")]
         public void NormalCase(int number, string expected)
         {
             var actual = fizzbuzz.Say(number);
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void WhenInput3ShouldSayFizz()
+        [Theory]
+        [InlineData(3, "Fizz")]
+        [InlineData(6, "Fizz")]
+        [InlineData(9, "Fizz")]
+        [InlineData(12, "Fizz")]
+        public void WhenInputDivideBy3ShouldSayFizz(int number, string expected)
         {
-            var actual = fizzbuzz.Say(3);
-            Assert.Equal("Fizz", actual);
+            var actual = fizzbuzz.Say(number);
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
@@ -38,24 +44,11 @@ namespace FizzbuzzTest
         }
 
         [Fact]
-        public void WhenInput6ShouldSayFizz()
-        {
-            var actual = fizzbuzz.Say(6);
-            Assert.Equal("Fizz", actual);
-        }
-
-        [Fact]
-        public void WhenInput9ShouldSayFizz()
-        {
-            var actual = fizzbuzz.Say(9);
-            Assert.Equal("Fizz", actual);
-        }
-
-        [Fact]
         public void WhenInput10ShouldSayBuzz()
         {
             var actual = fizzbuzz.Say(10);
             Assert.Equal("Buzz", actual);
         }
+
     }
 }
