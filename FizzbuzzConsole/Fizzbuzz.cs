@@ -10,7 +10,7 @@ namespace FizzbuzzController
             {
                 return "FizzBuzz";
             }
-            if(number == 5 || number == 10)
+            if(number % 5 == 0)
             {
                 return "Buzz";
             }
