@@ -38,25 +38,25 @@ namespace FizzbuzzTest
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void WhenInput5ShouldSayBuzz()
+        [Theory]
+        [InlineData(5, "Buzz")]
+        [InlineData(10, "Buzz")]
+        public void WhenInputDivideBy5ShouldSayBuzz(int number, string expected)
         {
-            var actual = fizzbuzz.Say(5);
-            Assert.Equal("Buzz", actual);
+            var actual = fizzbuzz.Say(number);
+            Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void WhenInput10ShouldSayBuzz()
+        [Theory]
+        [InlineData(15, "FizzBuzz")]
+        [InlineData(30, "FizzBuzz")]
+        [InlineData(45, "FizzBuzz")]
+        [InlineData(60, "FizzBuzz")]
+        [InlineData(75, "FizzBuzz")]
+        public void WhenInput15ShouldSayFizzBuzz(int number, string expected)
         {
-            var actual = fizzbuzz.Say(10);
-            Assert.Equal("Buzz", actual);
-        }
-
-        [Fact]
-        public void WhenInput15ShouldSayFizzBuzz()
-        {
-            var actual = fizzbuzz.Say(15);
-            Assert.Equal("FizzBuzz", actual);
+            var actual = fizzbuzz.Say(number);
+            Assert.Equal(expected, actual);
         }
     }
 }
