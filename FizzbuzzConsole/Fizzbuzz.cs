@@ -6,8 +6,7 @@ namespace FizzbuzzController
     {
         public string Say(int number)
         {
-          
-            if(number == 5)
+            if(number == 5 || number == 10)
             {
                 return "Buzz";
             }

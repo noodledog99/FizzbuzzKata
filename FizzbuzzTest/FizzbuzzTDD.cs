@@ -50,5 +50,12 @@ namespace FizzbuzzTest
             var actual = fizzbuzz.Say(9);
             Assert.Equal("Fizz", actual);
         }
+
+        [Fact]
+        public void WhenInput10ShouldSayBuzz()
+        {
+            var actual = fizzbuzz.Say(10);
+            Assert.Equal("Buzz", actual);
+        }
     }
 }
