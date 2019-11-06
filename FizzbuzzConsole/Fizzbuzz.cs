@@ -11,7 +11,7 @@ namespace FizzbuzzController
             {
                 return "Buzz";
             }
-            if(number == 3 || number == 6)
+            if(number == 3 || number == 6 || number == 9)
             {
                 return "Fizz";
             }

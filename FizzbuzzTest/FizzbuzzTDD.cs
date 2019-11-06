@@ -15,6 +15,8 @@ namespace FizzbuzzTest
         [InlineData(1, "1")]
         [InlineData(2, "2")]
         [InlineData(4, "4")]
+        [InlineData(7, "7")]
+        [InlineData(8, "8")]
         public void NormalCase(int number, string expected)
         {
             var actual = fizzbuzz.Say(number);
@@ -39,6 +41,13 @@ namespace FizzbuzzTest
         public void WhenInput6ShouldSayFizz()
         {
             var actual = fizzbuzz.Say(6);
+            Assert.Equal("Fizz", actual);
+        }
+
+        [Fact]
+        public void WhenInput9ShouldSayFizz()
+        {
+            var actual = fizzbuzz.Say(9);
             Assert.Equal("Fizz", actual);
         }
     }
