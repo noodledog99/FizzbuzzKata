@@ -6,6 +6,10 @@ namespace FizzbuzzController
     {
         public string Say(int number)
         {
+            if(number % 3 == 0 && number % 15 == 0)
+            {
+                return "FizzBuzz";
+            }
             if(number == 5 || number == 10)
             {
                 return "Buzz";
